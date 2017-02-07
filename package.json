@@ -17,6 +17,10 @@
       "stage-3"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karolselak/monterail-test"
+  },
   "author": "Karol Selak",
   "license": "MIT",
   "dependencies": {
