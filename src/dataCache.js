@@ -1,9 +1,9 @@
 var Profiles = [{
   _id: 'p1',
   name: 'dr. Halima',
+  avatar: '/graphics/user5-128x128.jpg',
   registerDate: new Date(1486545561726),
   lastLoginDate: new Date(1486545561726),
-  avatar: '/graphics/user5-128x128.jpg',
   activityLevel: 2,
   summary: {
     peers: 46,
@@ -16,9 +16,9 @@ var Profiles = [{
 },{
   _id: 'p2',
   name: 'S.E.N. Waweru',
+  avatar: '/graphics/user1-128x128.jpg',
   registerDate: new Date(1486545561726),
   lastLoginDate: new Date(1486545561726),
-  avatar: '/graphics/user1-128x128.jpg',
   activityLevel: 2,
   summary: {
     peers: 46,
@@ -31,9 +31,9 @@ var Profiles = [{
 },{
   _id: 'p3',
   name: 'Patricia',
+  avatar: '/graphics/user4-128x128.jpg',
   registerDate: new Date(1486545561726),
   lastLoginDate: new Date(1486545561726),
-  avatar: '/graphics/user4-128x128.jpg',
   activityLevel: 2,
   summary: {
     peers: 46,
@@ -46,9 +46,9 @@ var Profiles = [{
 },{
   _id: 'p4',
   name: 'Joseph Aluoch',
+  avatar: '/graphics/user8-128x128.jpg',
   registerDate: new Date(1486545561726),
   lastLoginDate: new Date(1486545561726),
-  avatar: '/graphics/user8-128x128.jpg',
   activityLevel: 2,
   summary: {
     peers: 46,
@@ -61,7 +61,11 @@ var Profiles = [{
 }];
 var Questions = [{
   _id: 'q1',
-  author: 'p3',
+  author: {
+    _id: 'p3',
+    name: 'Patricia',
+    avatar: '/graphics/user4-128x128.jpg',
+  },
   title: 'Will insulin make my patient gain weight?',
   connectedSource: '',
   isFollowedByLoggedUser: true,
@@ -74,23 +78,39 @@ var Questions = [{
     conversations: 3
   },
   comments: [{
-    author: 'p2',
+    author: {
+      _id: 'p2',
+      name: 'S.E.N. Waweru',
+      avatar: '/graphics/user1-128x128.jpg',
+    },
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
     score: 9,
     date: new Date(1486545561726),
     subcomments: [{
-      author: 'p2',
+      author: {
+        _id: 'p2',
+        name: 'S.E.N. Waweru',
+        avatar: '/graphics/user1-128x128.jpg',
+      },
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
       score: 4,
       date: new Date(1486545561726),
     },{
-      author: 'p3',
+      author: {
+        _id: 'p3',
+        name: 'Patricia',
+        avatar: '/graphics/user4-128x128.jpg',
+      },
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
       score: 3,
       date: new Date(1486545561726),
     }]
   },{
-    author: 'p4',
+    author: {
+      _id: 'p4',
+      name: 'Joseph Aluoch',
+      avatar: '/graphics/user8-128x128.jpg',
+    },
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
     score: 9,
     date: new Date(1486545561726),
@@ -99,7 +119,11 @@ var Questions = [{
   }]
 },{
   _id: 'q2',
-  author: 'p1',
+  author: {
+    _id: 'p1',
+    name: 'dr. Halima',
+    avatar: '/graphics/user5-128x128.jpg',
+  },
   title: 'Will insulin make my patient gain weight?',
   connectedSource: '',
   isFollowedByLoggedUser: true,
@@ -112,23 +136,39 @@ var Questions = [{
     conversations: 3
   },
   comments: [{
-    author: 'p2',
+    author: {
+      _id: 'p2',
+      name: 'S.E.N. Waweru',
+      avatar: '/graphics/user1-128x128.jpg',
+    },
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
     score: 9,
     date: new Date(1486545561726),
     subcomments: [{
-      author: 'p2',
+      author: {
+        _id: 'p2',
+        name: 'S.E.N. Waweru',
+        avatar: '/graphics/user1-128x128.jpg',
+      },
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
       score: 4,
       date: new Date(1486545561726),
     },{
-      author: 'p3',
+      author: {
+        _id: 'p3',
+        name: 'Patricia',
+        avatar: '/graphics/user4-128x128.jpg',
+      },
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
       score: 3,
       date: new Date(1486545561726),
     }]
   },{
-    author: 'p4',
+    author: {
+      _id: 'p4',
+      name: 'Joseph Aluoch',
+      avatar: '/graphics/user8-128x128.jpg',
+    },
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
     score: 9,
     date: new Date(1486545561726),
@@ -137,9 +177,13 @@ var Questions = [{
   }]
 },{
   _id: 'q3',
-  author: 'p2',
+  author: {
+    _id: 'p2',
+    name: 'S.E.N. Waweru',
+    avatar: '/graphics/user1-128x128.jpg',
+  },
   title: 'Will insulin make my patient gain weight? abcde',
-  connectedSource: '',
+  connectedSource: 'New York Times',
   isFollowedByLoggedUser: true,
   date: new Date(1486545561726),
   content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
@@ -150,23 +194,39 @@ var Questions = [{
     conversations: 3
   },
   comments: [{
-    author: 'p2',
+    author: {
+      _id: 'p2',
+      name: 'S.E.N. Waweru',
+      avatar: '/graphics/user1-128x128.jpg',
+    },
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
     score: 9,
     date: new Date(1486545561726),
     subcomments: [{
-      author: 'p2',
+      author: {
+        _id: 'p2',
+        name: 'S.E.N. Waweru',
+        avatar: '/graphics/user1-128x128.jpg',
+      },
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
       score: 4,
       date: new Date(1486545561726),
     },{
-      author: 'p3',
+      author: {
+        _id: 'p3',
+        name: 'Patricia',
+        avatar: '/graphics/user4-128x128.jpg',
+      },
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
       score: 3,
       date: new Date(1486545561726),
     }]
   },{
-    author: 'p4',
+    author: {
+      _id: 'p4',
+      name: 'Joseph Aluoch',
+      avatar: '/graphics/user8-128x128.jpg',
+    },
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
     score: 9,
     date: new Date(1486545561726),

@@ -1,0 +1,121 @@
+.elem-container {
+  background-color: #fbfbfb;
+  width: 100%;
+  min-height: calc(100% - 200px);
+  margin: 0px;
+//  margin: 0px 40px 58px 40px;
+  padding-top: 146px; 
+  @media (min-width: 768px) {
+    padding-top: 151px;
+  }  
+  @media (min-width: 980px) {
+    margin: 0px 40px 58px 40px;
+    width: calc(100% - 80px);
+  }
+  .question {
+    margin-left: 0px;
+    margin-bottom: 1px;
+    width: 100%;
+    @media (min-width: 768px) {
+      //margin-left: 40px;
+      //margin-right: 40px;
+      //width: calc(100% - 80px);
+      margin-left: calc(42.45283018867924% - 326.0377358490566px);
+      width: calc(15.09433962264151% + 652.0754716981132px);
+    }
+    @media (min-width: 980px) {
+      margin-left: calc((100% - 800px)/2);
+      width: 800px;
+    }
+    height: 320px;
+    background-color: white;
+    @include shadow(3px,-0px,6px, 0.1);
+    display: flex;
+    .background {
+      width: 595px;
+      height: 280px;
+      //padding-top: 20px;
+      background-color: $azure;
+      display: flex;
+      flex-wrap: wrap;
+      .avatar {
+        height: 50px;
+        width: 50px;
+        margin: 20px;
+        background-size: 50px;
+        @include border-radius(50%);
+      }
+      .question-header {
+        width: calc(100% - 90px);
+        padding: 20px;
+        height: 90px;
+        .author {
+          color: $gray;
+          @extend .small-caps-font;
+          span {
+            color: $blue;
+            font-size: 16px;
+            @extend .bold-font;
+            margin-right: 10px;
+          }
+          padding-bottom: 3px;
+        }
+        h2 {
+          @extend .italic-font;
+          color: $blue;
+          font-weight: bold;
+          font-size: 20px;
+          margin: 0px;
+        }
+      }
+      .footer {
+        width: 90px;
+        height: 190px;
+        div {
+          margin-top: 162px;
+          @extend .small-caps-font;
+          width: 70px;
+          margin-left: 10px;
+          color: $gray;
+          text-align: center;
+          padding-top: 5px;
+          border-top: 1px $gray solid;
+        }
+      }
+      .body {
+        height: 190px;
+        width: calc(100% - 90px);
+        background-color: white;
+      }
+    }
+    .summary {
+      @extend .italic-font;
+      padding-top: 130px;
+      padding-left: 48px;
+      div {
+        span {
+          @extend .normal-font;
+          font-size: 18px;
+          margin-right: 5px;
+        }
+        margin-bottom: 40px;
+      }
+    }
+  }
+  .ending {
+    @extend .question;
+    height: 90px;
+    padding: 36px 0px 0px 20px;
+    span {
+      @extend .normal-font;
+      color: $red;
+      cursor: pointer;
+      &:hover {
+        color: lighten($red, 10%);
+      }
+      &:active {
+        color: lighten($red, 20%);
+      }
+    }
+  }
+}

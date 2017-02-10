@@ -1,51 +1,54 @@
 import React from "react";
 import classNames from "classnames";
+import Header from './Header';
 
 export default class QuestionList extends React.Component {
+  renderComments() {
+    return null;
+  }
+  renderQuestions() {
+    return this.props.questionList.list.map((q,i)=>{
+      return <div className="question" key={q._id}>
+        <div className="background">
+          <div className="avatar" style={{backgroundImage: `url(${q.author.avatar})`}}/>
+          <div className="question-header">
+            <div className="author">
+              <span>{q.author.name}</span>{q.connectedSource ? 'found on '+q.connectedSource : 'is asking'}:
+            </div>
+            <h2>
+              {q.title}
+            </h2>
+          </div>
+          <div className="footer">
+            <div>{q.connectedSource ? 'found' : 'asked'}</div>
+          </div>
+          <div className="body">
+            {this.renderComments()}
+          </div>
+        </div>
+        <div className="summary">
+          <div>
+            <span>{q.summary.relatedDiscussion}</span> related discussion
+          </div>
+          <div>
+            <span>{q.summary.peersInvolved}</span> peers involved
+          </div>
+          <div>
+            <span>{q.summary.conversations}</span> conversations
+          </div>
+        </div>
+      </div>
+    });
+  }  
   render() {
-    console.log(this.props.questionList.list)
-    console.log(classNames)
-    debugger
-
-    var myShelfClass = this.props.questionList.filter == 'myShelf' ? '' : 'invisible';
-    var allQuestionsClass = this.props.questionList.filter == 'allQuestions' ? '' : 'invisible';
-    var recentClass = this.props.questionList.sortBy == 'recent' ? 'active' : 'passive';
-    var hotClass = this.props.questionList.sortBy == 'hot' ? 'active' : 'passive';
+  console.log(this.props.questionList.list)
     return (
-      <div>
-        <div className="header">
-          <div className="back-icon" style={{backgroundImage: "url('graphics/back-icon.png')"}}/>
-          <div className="back-icon-small" style={{backgroundImage: "url('graphics/back-icon-small.png')"}}/>
-          <div className="header-center">
-            <div className="up-part">
-              <div className="left-part">
-                <div className="title">
-                  <h2>QUESTIONS</h2>
-                  <div className="plus-icon" style={{backgroundImage: "url('graphics/plus-icon.png')"}}/>
-                </div>
-                <div className="filter">
-                  <span className="option">
-                    <span className="circle">
-                      <span className={myShelfClass}/>
-                    </span>
-                    <span className="text">My shelf</span> 
-                  </span>
-                  <span className="option">
-                    <span className="circle">
-                      <span className={allQuestionsClass}/>
-                    </span>
-                    <span className="text">All questions</span>
-                  </span>
-                </div>
-              </div>
-              <div className="right-part">
-                Sort by: <span className={recentClass}>recent</span> or <span className={hotClass}>hot</span>
-              </div>            
-            </div>
-            <div className="down-part">
-              <input className="main-search" placeholder="Search questions" />
-              <button>SEARCH</button>
-            </div>
+      <div className="main-container">        
+        <Header {...this.props} />
+        <div className="elem-container">
+          {this.renderQuestions()}
+          <div className="ending" key={'ending'}>
+            <span>load more questions</span>
           </div>
         </div>
       </div>
