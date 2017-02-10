@@ -15,6 +15,7 @@ export default class QuestionList extends React.Component {
       <div>
         <div className="header">
           <div className="back-icon" style={{backgroundImage: "url('graphics/back-icon.png')"}}/>
+          <div className="back-icon-small" style={{backgroundImage: "url('graphics/back-icon-small.png')"}}/>
           <div className="header-center">
             <div className="up-part">
               <div className="left-part">
