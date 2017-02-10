@@ -6,21 +6,21 @@ const setQuestionList = (query, pages=1, profile) => {
 
   return (dispatch, getState) => {
     if (getState().questionList.sortBy == 'recent') {
-      var sortQuery = {date: -1};
+      var $sort = {date: -1};
     } else if (getState().questionList.sortBy == 'hot') {
-      var sortQuery = {score: -1};
+      var $sort = {score: -1};
     }
     if (!query) {
-      var q = {};
+      var $match = {};
     } else {
       var regex = {$regex: new RegExp(query), $options: 'im'};
-      var q = {
+      var $match = {
         $or: [{content: regex}, {title: regex}] //TODO searching in comments
       }
     }
     var list = Mingo.aggregate(Questions, [
-      {$match: q},
-      {$sort: sortQuery},
+      {$match},
+      {$sort},
       {$limit: pages*questionsPerPage}
     ]);
     dispatch({

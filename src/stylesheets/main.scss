@@ -1,0 +1,203 @@
+$cream: #FFE1AD;
+$gray: #A7A9AC;
+$blue: #0266B3;
+
+.serif-font {
+  font-family: Amiri, serif;
+  font-size: 15px;
+}
+.italic-font {
+  @extend .serif-font;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+.bold-font {
+  @extend .serif-font;
+  font-style: normal;
+  letter-spacing: 0px;
+  font-weight: bold;
+}
+.caps-font {
+  font-family: Signika, serif;
+}
+
+@mixin border-radius($radius: 0%) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: $cream;
+  min-width: 320px;
+}
+.header {
+  display: block;
+  padding-bottom: 15px;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  .back-icon {
+    position: absolute;
+    margin-top: 41px;
+//    margin-left: 64px;
+//    margin-left: calc((100% - 800px)/2);
+    height: 42px;
+    width: 42px;
+    margin-left: 20px;
+    @media (min-width: 980px) {
+      margin-left: calc(20% - 176px);
+    }
+    @media (min-width: 1200px) {
+      margin-left: 64px;
+    }
+
+  }
+  div { //all divs at once
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .header-center {
+    padding-top: 24px;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 100%;
+    @media (min-width: 768px) {
+      margin-left: 70px;
+      width: calc(100% - 70px);
+    }
+    @media (min-width: 980px) {
+      margin-left: calc((100% - 840px)/2);
+      width: 840px;
+    }
+    .up-part {
+      width: 100%;
+      .left-part {
+        width: 600px;
+        .title {
+          margin-left: 70px;
+          @media (min-width: 768px) {
+            margin-left: 0px;
+          }
+          h2 {
+            @extend .caps-font;
+            margin-right: 30px;
+          }
+          .plus-icon {
+            margin-bottom: 15px;
+            height: 26px;
+            width: 26px;
+            //background-image: url('graphics/plus-icon.png');
+          }
+          margin-right: 20px;
+        }
+        .filter {
+          margin-left: -25px;
+          margin-top: 15px;
+          cursor: pointer;
+          @extend .serif-font;
+          .option {
+            margin: 0px 0px 15px 25px;
+            .circle {
+              position: fixed;
+              height: 15px;
+              width: 15px;
+              margin: 0px 10px 5px 0px;
+              border: 1px solid $gray;
+              @include border-radius(50%);
+              span {
+                position: fixed;
+                height: 7px;
+                width: 7px;
+                background-color: black;
+                margin: 3px;
+                @include border-radius(50%);
+                &.invisible {
+                  display: none;
+                }
+              }
+            }
+            .text {
+              margin-left: 30px;
+            }
+          }
+        }
+      }
+      .right-part {
+        @extend .italic-font;
+        display: block;
+        text-align: right;
+        margin-top: 20px;
+        .passive {
+          @extend .bold-font;
+          border-bottom: 1px solid $gray;
+          display: inline-block;
+          height: 18px;
+          color: $gray;
+          cursor: pointer;
+          &:hover {
+            color: darken($gray, 20%);
+            border-bottom-color: darken($gray, 20%);
+          }
+          &:active {
+            color: lighten($gray, 20%);
+            border-bottom-color: lighten($gray, 20%);
+          }
+        }
+        .active {
+          @extend .bold-font;
+          color: $blue;
+          cursor: pointer;
+          &:hover {
+            color: darken($blue, 20%);
+          }
+          &:active {
+            color: lighten($blue, 20%);
+          }
+        }
+//        padding-bottom: 15px;
+      }
+      padding-bottom: 15px;
+    }
+    .down-part {
+      width: 100%;
+      button {
+        @extend .caps-font;
+        font-size: 15px;
+        width:: 25%;
+        height: 35px;
+        margin-left: 0px;
+        @media (min-width: 480px) {
+          margin-left: 20px;
+          width: calc(25% - 20px);
+        }
+        background: white;
+        border: 1px solid $gray;
+        color: $gray;
+        &:hover {
+          background: lighten($gray, 30%);
+          border-color: darken($gray, 20%);
+          color: darken($gray, 20%);
+        }
+        &:focus {
+          outline:0;
+        }
+        &:active {
+          background: white;
+        }
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      input {
+        width: 75%;
+        height: 35px;
+        padding-left: 15px;
+        border: 1px solid #eee;
+        background-color: #fbfbfb;
+      }
+    }
+  }
+}

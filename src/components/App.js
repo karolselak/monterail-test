@@ -9,7 +9,7 @@ class App extends React.Component {
     var props = Object.assign({}, this.props);
     delete props.main;
     delete props.modal;
-    return <div className="container">
+    return <div>
       {React.cloneElement(this.props.main, {...props})}
       {React.cloneElement(this.props.modal, {...props})}
     </div>;

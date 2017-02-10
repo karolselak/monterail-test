@@ -3,7 +3,7 @@ import { routerReducer } from "react-router-redux";
 import update from 'react-addons-update';
 //import { reducer as formReducer } from "redux-form";
 
-const questionListReducer = (state = {list:[], mode: 'myShelf', sortBy: 'recent'}, action) => {
+const questionListReducer = (state = {list:[], filter: 'myShelf', sortBy: 'recent'}, action) => {
   switch (action.type) {
     case 'SET_QUESTION_LIST':
       return update(state, {list: {$set: action.list}})

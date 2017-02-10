@@ -27,7 +27,7 @@ const router = (store) => {
     <Route component={App}>
       <Route path="/" onEnter={onEnterMain(store)} components={{main: QuestionList, modal: Profile}} />
       <Route path="/main" onEnter={onEnterMain(store)} components={{main: QuestionList, modal: Profile}} />
-      <Route path="/question/:qid/:page" onEnter={onEnterQuestion(store)} components={{main: Question, modal: Profile}} />
+      <Route path="/question" onEnter={onEnterQuestion(store)} components={{main: Question, modal: Profile}} />
       <Route path="*" components={{main: NotFound}}/>
     </Route>
   </Router>
