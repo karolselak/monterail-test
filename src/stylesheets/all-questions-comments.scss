@@ -1,0 +1,137 @@
+.body {
+  display: inline;
+  height: 190px;
+  width: calc(100% - 290px);
+  background-color: white;
+
+  .more-activities {
+    //flex-shrink: 0;
+    margin-top: 36px;
+    width: 90px;
+    height: 154px;
+    margin-left: 10px;
+    float: left;
+    @extend .italic-font;
+    &.param2 {
+      display: none;
+    }
+    &.param3 {
+      @media (min-width: 590px) {
+        display: none;
+      }
+    }
+    &.param4 {
+      @media (min-width: 690px) {
+        display: none;
+      }
+    }
+    &.param5 {
+      @media (min-width: 915px) {
+        display: none;
+      }
+    }
+    .small-circle {
+      margin-top: 7px;
+    }
+    text-align: center;
+    line-height: 16px;
+    span {
+      margin-top: 40px;
+      margin-bottom: 54px;
+      width: 90px;
+      @extend .normal-font;
+      font-size: 18px;
+      display: block;
+    }
+    .more-5 {
+      display: none;
+      @media (min-width: 915px) {
+        display: block;
+      }
+    }
+    .more-4 {
+      display: none;
+      @media (min-width: 690px) {
+        display: block;
+      }
+      @media (min-width: 915px) {
+        display: none;
+      }
+    }
+    .more-3 {
+      display: none;
+      @media (min-width: 590px) {
+        display: block;
+      }
+      @media (min-width: 690px) {
+        display: none;
+      }
+    }
+    .more-2 {
+      @media (min-width: 590px) {
+        display: none;
+      }
+    }
+  }
+  .comments {
+    display: inline;
+    overflow: hidden;
+    float: left;
+    width: 100px;
+    height: 205px;
+    &.param2 {
+      width: 200px;
+    }
+    @media (min-width: 590px) {
+      &.param2,&.param3,&.param4,&.param5,&.param6 {
+        width: 200px;
+      }
+      &.param3 {
+        width: 300px;
+      }
+    }
+    @media (min-width: 690px) {
+      &.param3,&.param5,&.param6 {
+        width: 300px;
+      }
+      &.param4 {
+        width: 400px;
+      }
+    }
+    @media (min-width: 915px) {
+      &.param4,&.param6 {
+        width: 400px;
+      }            
+      &.param5 {
+        width: 500px;
+      }
+    }
+    .comment {
+      float: right;
+      @extend .more-activities;
+      background-color: #eee;
+      .comment-avatar {
+        @extend .avatar;
+      }
+      .footer {
+        height: 48px;
+        display: block;
+        .footer-text {
+          margin-top: 56px;
+        }
+        .small-circle {
+          margin-top: 1px;
+        }
+        &.answer {
+          .footer-text {
+            color: black;
+            border-color: black;
+          }
+          .small-circle {
+            background-color: black;
+          }
+        }
+      }
+    }
+  }
+}
