@@ -1,15 +1,29 @@
 .body {
   display: inline;
-  height: 190px;
-  width: calc(100% - 290px);
+  height: 161px;
+  width: 100%;
+  //margin-top: -15px;
+  @media (min-width: 480px) {
+    width: calc(100% - 90px);
+    //margin-top: 0px;
+    height: 190px;
+  }
   background-color: white;
-
   .more-activities {
     //flex-shrink: 0;
-    margin-top: 36px;
-    width: 90px;
-    height: 154px;
-    margin-left: 10px;
+    background-color: #eee;
+    margin-top: 1px;
+    margin-left: 1px;
+    margin-bottom: 30px;
+    width: 77px;
+    height: 132px;
+    @media (min-width: 480px) {
+      background-color: white;
+      margin-top: 36px;
+      margin-left: 10px;
+      width: 90px;
+      height: 154px;
+    }
     float: left;
     @extend .italic-font;
     &.param2 {
@@ -35,10 +49,16 @@
     }
     text-align: center;
     line-height: 16px;
+    display: flex;
+    flex-wrap: wrap;
     span {
-      margin-top: 40px;
-      margin-bottom: 54px;
-      width: 90px;
+      padding-top: 40px;
+      //margin-bottom: 54px;
+      height: 88px;
+      @media (min-width: 480px) {
+        height: 109px;
+      }        
+      width: 100%;
       @extend .normal-font;
       font-size: 18px;
       display: block;
@@ -77,10 +97,17 @@
     display: inline;
     overflow: hidden;
     float: left;
-    width: 100px;
-    height: 205px;
+    width: 78px;
+    height: 170px;
+    @media (min-width: 480px) {
+      height: 205px;
+      width: 100px;
+    }
     &.param2 {
-      width: 200px;
+      width: 156px;
+      @media (min-width: 480px) {
+        width: 200px;
+      }
     }
     @media (min-width: 590px) {
       &.param2,&.param3,&.param4,&.param5,&.param6 {
@@ -112,15 +139,23 @@
       background-color: #eee;
       .comment-avatar {
         @extend .avatar;
+        margin: 21px;
+        @media (min-width: 480px) {
+          margin: 20px
+        }
       }
       .footer {
         height: 48px;
         display: block;
         .footer-text {
-          margin-top: 56px;
+          margin: 22px 3.5px 0px 3.5px;
+          @media (min-width: 480px) {
+            margin-top: 26px;
+            margin: 26px 10px 0px 10px;
+          }
         }
         .small-circle {
-          margin-top: 1px;
+          margin-top: 2px;
         }
         &.answer {
           .footer-text {

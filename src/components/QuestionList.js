@@ -36,6 +36,17 @@ export default class QuestionList extends React.Component {
       <div className={'comments param'+param}>
         {arr}
       </div>
+      <div className="summary">
+        <div>
+          <span>{q.summary.relatedDiscussion}</span> related discussions
+        </div>
+        <div>
+          <span>{q.summary.peersInvolved}</span> peers involved
+        </div>
+        <div>
+          <span>{q.summary.conversations}</span> conversations
+        </div>
+      </div>
     </div>//[moreActivities].concat(arr.reverse());
   }
   renderQuestions() {
@@ -56,17 +67,7 @@ export default class QuestionList extends React.Component {
             <div className="small-circle"/>
           </div>
           {this.renderComments(q)}
-          <div className="summary">
-            <div>
-              <span>{q.summary.relatedDiscussion}</span> related discussions
-            </div>
-            <div>
-              <span>{q.summary.peersInvolved}</span> peers involved
-            </div>
-            <div>
-              <span>{q.summary.conversations}</span> conversations
-            </div>
-          </div>
+          
         </div>
       </div>
     });
