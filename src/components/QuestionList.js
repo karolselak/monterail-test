@@ -25,7 +25,7 @@ export default class QuestionList extends React.Component {
       </div>)
     }
     var param = Math.min(6,l);
-    return <div>
+    return <div className="body">
       <div className={'more-activities param'+param} key='more'>
         <span className='more-5'>{l-4}</span>
         <span className='more-4'>{l-3}</span>
@@ -55,19 +55,17 @@ export default class QuestionList extends React.Component {
             <div className="footer-text">{q.connectedSource ? 'found' : 'asked'}</div>
             <div className="small-circle"/>
           </div>
-          <div className="body">
-            {this.renderComments(q)}
-          </div>
-        </div>
-        <div className="summary">
-          <div>
-            <span>{q.summary.relatedDiscussion}</span> related discussions
-          </div>
-          <div>
-            <span>{q.summary.peersInvolved}</span> peers involved
-          </div>
-          <div>
-            <span>{q.summary.conversations}</span> conversations
+          {this.renderComments(q)}
+          <div className="summary">
+            <div>
+              <span>{q.summary.relatedDiscussion}</span> related discussions
+            </div>
+            <div>
+              <span>{q.summary.peersInvolved}</span> peers involved
+            </div>
+            <div>
+              <span>{q.summary.conversations}</span> conversations
+            </div>
           </div>
         </div>
       </div>
