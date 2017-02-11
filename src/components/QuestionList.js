@@ -2,12 +2,8 @@ import React from "react";
 import classNames from "classnames";
 import Header from './Header';
 
-export default class QuestionList extends React.Component {
-  renderCommentsForSize(size, q) {
-    
-    return arr;
-  }  
-  renderComments(q) {
+export default class QuestionList extends React.Component { 
+  renderBody(q) {
     var arr = [];
     var comments = q.comments;
     comments = comments.slice(0,7);
@@ -66,7 +62,7 @@ export default class QuestionList extends React.Component {
             <div className="footer-text">{q.connectedSource ? 'found' : 'asked'}</div>
             <div className="small-circle"/>
           </div>
-          {this.renderComments(q)}
+          {this.renderBody(q)}
           
         </div>
       </div>
