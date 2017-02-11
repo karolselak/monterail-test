@@ -3,8 +3,40 @@ import classNames from "classnames";
 import Header from './Header';
 
 export default class QuestionList extends React.Component {
-  renderComments() {
-    return null;
+  renderCommentsForSize(size, q) {
+    
+    return arr;
+  }  
+  renderComments(q) {
+    var arr = [];
+    var comments = q.comments;
+    comments = comments.slice(0,7);
+    var l = comments.length;
+    var hMany = l == 5 ? 5 : Math.min(4, comments.length);
+    for (let i=0; i < hMany; i++) {
+      arr.push(<div className='comment' key={'comm-'+i}>
+        <div className="comment-avatar" style={{backgroundImage: `url(${comments[i].author.avatar})`}}/>
+        <div className={"footer"+(comments[i].isAnswer ? ' answer' : '')}>
+          <div className="footer-text">
+            {comments[i].isAnswer ? 'answered' : 'commented'}
+          </div>
+          <div className="small-circle"/>
+        </div>
+      </div>)
+    }
+    var param = Math.min(6,l);
+    return <div>
+      <div className={'more-activities param'+param} key='more'>
+        <span className='more-5'>{l-4}</span>
+        <span className='more-4'>{l-3}</span>
+        <span className='more-3'>{l-2}</span>
+        <span className='more-2'>{l-1}</span> more activities
+        <div className="small-circle"/>
+      </div>
+      <div className={'comments param'+param}>
+        {arr}
+      </div>
+    </div>//[moreActivities].concat(arr.reverse());
   }
   renderQuestions() {
     return this.props.questionList.list.map((q,i)=>{
@@ -20,15 +52,16 @@ export default class QuestionList extends React.Component {
             </h2>
           </div>
           <div className="footer">
-            <div>{q.connectedSource ? 'found' : 'asked'}</div>
+            <div className="footer-text">{q.connectedSource ? 'found' : 'asked'}</div>
+            <div className="small-circle"/>
           </div>
           <div className="body">
-            {this.renderComments()}
+            {this.renderComments(q)}
           </div>
         </div>
         <div className="summary">
           <div>
-            <span>{q.summary.relatedDiscussion}</span> related discussion
+            <span>{q.summary.relatedDiscussion}</span> related discussions
           </div>
           <div>
             <span>{q.summary.peersInvolved}</span> peers involved

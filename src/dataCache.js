@@ -86,6 +86,7 @@ var Questions = [{
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
     score: 9,
     date: new Date(1486545561726),
+    isAnswer: true,
     subcomments: [{
       author: {
         _id: 'p2',
@@ -114,8 +115,7 @@ var Questions = [{
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
     score: 9,
     date: new Date(1486545561726),
-    subcomments: [],
-    isAnswer: true
+    subcomments: []
   }]
 },{
   _id: 'q2',
@@ -144,6 +144,7 @@ var Questions = [{
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
     score: 9,
     date: new Date(1486545561726),
+    isAnswer: true,
     subcomments: [{
       author: {
         _id: 'p2',
@@ -172,8 +173,57 @@ var Questions = [{
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
     score: 9,
     date: new Date(1486545561726),
-    subcomments: [],
-    isAnswer: true
+    subcomments: []
+  },{
+    author: {
+      _id: 'p4',
+      name: 'Joseph Aluoch',
+      avatar: '/graphics/user8-128x128.jpg',
+    },
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
+    score: 9,
+    date: new Date(1486545561726),
+    subcomments: []
+  },{
+    author: {
+      _id: 'p4',
+      name: 'Joseph Aluoch',
+      avatar: '/graphics/user8-128x128.jpg',
+    },
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
+    score: 9,
+    date: new Date(1486545561726),
+    subcomments: []
+  },{
+    author: {
+      _id: 'p4',
+      name: 'Joseph Aluoch',
+      avatar: '/graphics/user8-128x128.jpg',
+    },
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
+    score: 9,
+    date: new Date(1486545561726),
+    subcomments: []
+  },{
+    author: {
+      _id: 'p4',
+      name: 'Joseph Aluoch',
+      avatar: '/graphics/user8-128x128.jpg',
+    },
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
+    score: 9,
+    date: new Date(1486545561726),
+    subcomments: []
+  },{
+    author: {
+      _id: 'p4',
+      name: 'Joseph Aluoch',
+      avatar: '/graphics/user8-128x128.jpg',
+    },
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
+    score: 9,
+    date: new Date(1486545561726),
+    subcomments: []
   }]
 },{
   _id: 'q3',
@@ -202,6 +252,7 @@ var Questions = [{
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
     score: 9,
     date: new Date(1486545561726),
+    isAnswer: true,
     subcomments: [{
       author: {
         _id: 'p2',
@@ -230,8 +281,7 @@ var Questions = [{
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum ut nunc pharetra mattis sed eu orci. Nulla nisi felis, egestas ac felis id, malesuada mollis dui. Pellentesque aliquet urna eu nulla lacinia, vel vehicula nulla congue. Sed egestas nisl at neque semper, non hendrerit justo bibendum. Fusce lobortis elit rhoncus massa vestibulum venenatis. Ut pharetra ultrices mattis.',
     score: 9,
     date: new Date(1486545561726),
-    subcomments: [],
-    isAnswer: true
+    subcomments: []
   }]
 }];
 
