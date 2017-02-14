@@ -45,17 +45,13 @@
       display: flex;
       flex-wrap: wrap;
       .avatar {
-        height: 35px;
-        width: 35px;
         margin: 10px;
+        @include avatar(35px);
         background-size: 35px;
         @media (min-width: 480px) {
-          height: 50px;
-          width: 50px;
+          @include avatar(50px);
           margin: 20px;
-          background-size: 50px;
         }
-        @include border-radius(50%);
       }
       .question-header {
         width: calc(100% - 90px);
@@ -67,7 +63,12 @@
           height: 90px;
         }
         .author {
+          display: block;
           color: $gray;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          height: 21px;
           @extend .small-caps-font;
           span {
             color: $blue;

@@ -6,12 +6,13 @@ import Profile from "./components/Profile";
 import Question from "./components/Question";
 import QuestionList from "./components/QuestionList";
 import NotFound from "./components/NotFound";
-import { setQuestionList } from "./actions";
+import { setQuestionList, setProfile } from "./actions";
 
 const onEnterMain = store => {
   return (args) => {
     var qs = args.location.query;
     setQuestionList(qs.query, qs.pages, qs.pid)(store.dispatch, store.getState);
+    setProfile(qs.pid)(store.dispatch, store.getState);
   }
 }
 

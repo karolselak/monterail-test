@@ -222,6 +222,7 @@
         padding-left: 15px;
         border: 1px solid #eee;
         background-color: #fbfbfb;
+        @extend .normal-font;
       }
     }
   }

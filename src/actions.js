@@ -1,7 +1,8 @@
 import {Profiles, Questions} from './dataCache';
+import { push } from 'react-router-redux';
 import Mingo from 'mingo';
 
-const setQuestionList = (query, pages=1, profile) => {
+const setQuestionList = (query, pages=1) => {
   const questionsPerPage = 3;
 
   return (dispatch, getState) => {
@@ -29,5 +30,24 @@ const setQuestionList = (query, pages=1, profile) => {
     })
   }
 }
-
-export { setQuestionList }
+const setProfile = (pid) => {
+  return (dispatch, getState) => {
+    var profile = Mingo.aggregate(Profiles,[{
+      $match: {'_id': pid}
+    }])[0];
+    dispatch({
+      type: 'SET_PROFILE',
+      profile
+    })
+  }
+}
+const unsetProfile = () => {
+  return push('/main');//{type: 'SET_PROFILE'}
+  /*return (dispatch, getState) => {
+    console.log('asd')
+    debugger
+    dispatch({});
+    //dispatch(push('/'+generatePath(getState().pathParams))); //set new URL
+  }*/
+}
+export { setQuestionList, setProfile, unsetProfile }

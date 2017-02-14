@@ -1,0 +1,311 @@
+.modal {
+  padding: 0px !important;
+}
+.profile-modal {
+  width: 100%;
+  margin: 0px;
+  @media (min-width: 480px) {
+    margin: 22px 0px 35px 0px;
+  }
+  @media (min-width: 980px) {
+    width: 847px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .modal-header {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    border: none;
+  }
+  .modal-content {
+    border: 0px;
+    @include border-radius(0%);
+    .modal-body {
+      padding: 11px;
+      @media (min-width: 480px) {
+        padding: 15px;
+      }
+      .profile-header {
+        max-width: 600px;
+        margin: auto;
+        .avatar {
+          margin: auto;
+          margin-top: 10px;
+          @include avatar(50px);
+          @media (min-width: 480px) {
+            @include avatar(85px);
+            margin-top: 35px;
+          }
+        }
+        .nickname {
+          width: 100%;
+          text-align: center;
+          color: $blue;
+          font-size: 15px;
+          @media (min-width: 480px) {
+            font-size: 20px;
+          }
+          @extend .bold-font;
+          padding-top: 15px;
+        }
+        .basic-info {
+          border-bottom: 1px solid $gray;
+          display: block;
+          justify-content: space-around;
+          @media (min-width: 480px) {
+            display: flex;
+          }
+          @media (min-width: 768px) {
+            justify-content: space-between;
+          }
+          flex-wrap: wrap;
+          padding-bottom: 15px;
+          div {
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-top: 5px;
+            @media (min-width: 768px) {
+              margin-right: 0px;
+              margin-left: 0px;
+            }
+            vertical-align: top;
+            span {
+              display: block;
+              width: 100%;
+              text-align: center;
+              margin-top: 0px;
+              @media (min-width: 480px) {
+                display: inline;
+                width: auto;
+                margin-top: 5px;
+              }
+            }
+            .text1 {
+              display: inline-block;
+              @extend .small-caps-font;
+              color: $gray;
+              font-size: 14px;
+            }
+            .text2 {
+              @extend .small-font;
+              color: black;
+              margin-left: 0px;
+              @media (min-width: 480px) {
+                margin-left: 10px;
+              }
+            }
+            .badges {
+              margin-top: 0px;
+              display: block;
+              @media (min-width: 480px) {
+                display: inline-block;
+              }
+              margin-left: 4px;
+              .bdg {
+                display: inline-block;
+                width: 18px;
+                height: 25px;
+                margin: 5px;            
+                margin-top: 0px;            
+              }
+            }
+          }
+        }
+      }
+      .advanced-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 600px;
+        margin: auto;
+        .lower-header {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          button {
+            margin-top: 15px;
+            height: 20px;
+            width: 20px;
+            background-size: 20px;
+            @media (min-width: 480px) {
+              margin-top: 23px;
+              height: 30px;
+              width: 30px;
+              background-size: 30px;
+            }
+            border: none;
+            flex-shrink: 0;
+          }
+          h1 {
+            text-align: center;
+            flex-shrink: 0;
+            @extend .italic-font;
+            font-size: 26px;
+            margin-top: 12px;
+            @media (min-width: 480px) {
+              font-size: 40px;
+              margin-top: 20px;
+              margin-bottom: 20px;
+            }
+            margin-bottom: 10px;
+          }
+        }
+        span {
+          max-width: 200px;
+          width: 100%;
+          @media (min-width: 480px) {
+            max-width: 100%;
+          }
+          text-align: center;
+          @extend .small-caps-font;
+          color: $gray;
+          font-size: 14px;
+        }
+        .summary {
+          margin-top: 25px;
+          margin-bottom: 30px;
+          @media (min-width: 480px) {
+            margin-top: 40px;
+            margin-bottom: 50px;
+          }
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          width: 436px;
+          div {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 9px;
+            width: 90px;
+            height: 90px;
+            span {
+              color: black;
+//                position: absolute;
+              @extend .italic-font;
+              z-index: 10;
+            }
+            .number {
+              margin-top: 12px;
+              @extend .normal-font;
+              font-size: 25px;
+            }
+            div {
+              background-color: $azure;
+              opacity: 0.7;
+              margin: 0px;
+              width: 90px;
+              height: 90px;
+              position: absolute;
+            }
+            .peers {
+              @include rotate(55deg);
+              //margin-left: 0px;
+            }
+            .discussions {
+              @include rotate(80deg);
+            }
+            .findings {
+              @include rotate(60deg);
+            }
+            .questions {
+              @include rotate(10deg);
+            }
+          }
+        }
+        .profiles {
+          margin: 10px -5px 15px -5px;
+          @media (min-width: 480px) {
+            margin-bottom: 30px;
+          }
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          .joined-profile {
+            margin: 6px;
+            width: 90px;
+            display: flex;
+            flex-wrap: wrap;
+            .joined-avatar {
+              @include avatar(50px);
+              margin: 20px;
+            }
+            .joined-name {
+              display: flex;
+              justify-content: center;
+              width: 100%;
+              height: 50px;
+              span {
+                margin-top: 7px;
+                font-size: 15px;
+                color: $blue;
+                @extend .bold-font;
+              }
+              background-color: white;
+            }
+          }
+        }
+      }
+    }
+    .discussion {
+      height: 236px;
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 0px;
+      display: inline-block;
+      @media (min-width: 480px) {
+        height: 160px;
+        margin-bottom: 24px;
+        margin-top: 50px;
+      }
+      .discussion-avatar {
+        @include avatar(50px);
+        margin-top: -25px;
+        margin-left: calc((100% - 50px)/2);
+      }
+      .discussion-author {
+        @extend .small-caps-font;
+        color: $gray;
+        width: 100%;
+        text-align: center;
+        margin-top: 18px;
+        span {
+          @extend .bold-font;
+          color: $blue;
+          margin-right: 4px;
+          font-size: 13px;
+        }
+      }
+      h2 {
+        margin-top: 7px;
+        @extend .italic-font;
+        color: $blue;
+        font-weight: bold;
+        font-size: 17px;
+        width: 100%;
+        text-align: center;
+        @media (min-width: 480px) {
+          font-size: 20px;
+        }
+      }
+      .discussion-summary {
+        margin-top: 20px;
+        @extend .italic-font;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        span {
+          margin-left: 10px;
+          margin-right: 5px;
+          @media (min-width: 480px) {
+            margin-left: 20px;
+            margin-right: 5px;
+          }
+          @extend .normal-font;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

@@ -15,7 +15,12 @@ const questionReducer = (state = {}, action) => {
   return state;
 }
 const profileReducer = (state = {}, action) => {
-  return state;
+  switch (action.type) {
+    case 'SET_PROFILE':
+      return action.profile || state;
+    default:
+      return state;
+  }
 }
 export const reducers = combineReducers({
   routing: routerReducer,
