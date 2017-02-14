@@ -2,7 +2,7 @@ import React from "react";
 import "../stylesheets/main.scss";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { setQuestionList, setProfile, unsetProfile } from '../actions';
+import actions from '../actions';
 
 class App extends React.Component {
   render() {
@@ -19,7 +19,6 @@ const mapStateToProps = state => {
   return { ...state };
 };
 const mapDispatchToProps = dispatch => {
-  debugger
-  return bindActionCreators({ setQuestionList, setProfile, unsetProfile }, dispatch);
+  return bindActionCreators({...actions}, dispatch);
 };
 export default connect(mapStateToProps, mapDispatchToProps)(App);

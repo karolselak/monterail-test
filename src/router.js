@@ -34,4 +34,4 @@ const router = (store) => {
   </Router>
 };
 
-export { router };
+export default router;
