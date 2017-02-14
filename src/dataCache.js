@@ -185,6 +185,7 @@ var Questions = [{
     peersInvolved: 6,
     conversations: 3
   },
+  lastTimeDiscussed: new Date(1486545561726),
   comments: [{
     author: {
       _id: 'p2',
@@ -243,6 +244,7 @@ var Questions = [{
     peersInvolved: 6,
     conversations: 3
   },
+  lastTimeDiscussed: new Date(1486545561726),
   comments: [{
     author: {
       _id: 'p2',
@@ -351,6 +353,7 @@ var Questions = [{
     peersInvolved: 6,
     conversations: 3
   },
+  lastTimeDiscussed: new Date(1486545561726),
   comments: [{
     author: {
       _id: 'p2',

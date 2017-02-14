@@ -4,7 +4,8 @@
   min-height: calc(100% - 200px);
   margin: 0px;
 //  margin: 0px 40px 58px 40px;
-  padding-top: 146px; 
+  padding-top: 146px;
+  padding-bottom: 50px;
   @media (min-width: 768px) {
     padding-top: 151px;
   }  
@@ -17,9 +18,6 @@
     margin-bottom: 1px;
     width: 100%;
     @media (min-width: 768px) {
-      //margin-left: 40px;
-      //margin-right: 40px;
-      //width: calc(100% - 80px);
       margin-left: calc(42.45283018867924% - 326.0377358490566px);
       width: calc(15.09433962264151% + 652.0754716981132px);
     }
@@ -61,22 +59,6 @@
         @media (min-width: 480px) {
           padding: 20px;
           height: 90px;
-        }
-        .author {
-          display: block;
-          color: $gray;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          height: 21px;
-          @extend .small-caps-font;
-          span {
-            color: $blue;
-            font-size: 13px;
-            @extend .bold-font;
-            margin-right: 10px;
-          }
-          padding-bottom: 3px;
         }
         h2 {
           @extend .italic-font;
@@ -145,6 +127,152 @@
           }
         }
       }
+    }
+    @import "question-single";
+  }
+  .votes {
+    padding-top: 20px;
+    vertical-align: top;
+    display: flex;
+    height: 100%;
+    margin-right: 35px;
+    @extend .italic-font;
+    span {
+      @extend .normal-font;
+      font-size: 18px;
+      margin-right: 5px;
+      margin-top: -3px;
+    }
+    .arrows {
+      margin-left: 15px;
+      margin-top: -20px;
+      div {
+        height: 10px;
+        width: 10px;
+        margin: 13px;
+      }
+    }
+  }
+  button {
+    @extend .normal-font;
+    font-size: 15px;
+    width: 180px;
+    height: 32px;
+    margin-left: calc((100% - 180px)/2);
+    margin-top: -16px;
+    /*@media (min-width: 480px) {
+      margin-left: 20px;
+      width: calc(25% - 20px);
+    }*/
+    background: white;
+    border: 1px solid #e5e5e5;
+    color: black;
+    &:hover {
+      background: lighten($gray, 30%);
+      border-color: $gray;
+    }
+    &:focus {
+      outline:0;
+    }
+    &:active {
+      background: white;
+    }
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .author {
+    display: block;
+    color: $gray;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 21px;
+    @extend .small-caps-font;
+    span {
+      color: $blue;
+      font-size: 13px;
+      @extend .bold-font;
+      margin-right: 10px;
+    }
+    padding-bottom: 3px;
+  }
+  .comment-body {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+    .comment {
+      display: flex;
+      width: 100%;
+      @media (min-width: 768px) {
+        margin-left: calc(42.45283018867924% - 326.0377358490566px);
+        width: calc(15.09433962264151% + 652.0754716981132px);
+      }
+      @media (min-width: 980px) {
+        margin-left: calc((100% - 800px)/2);
+        width: 800px;
+      }
+
+      &.sub {
+        width: 710px;
+        margin-left: calc(50% - 310px);
+        margin-bottom: 0px;
+        .comment-container {
+          width: 618px;
+        }
+      }
+      .avatar-container {
+        background-color: white;
+        margin: 1px;
+        @include shadow(3px,-0px,6px, 0.1);
+        .avatar {
+          margin: 9px;
+          @include avatar(35px);
+          background-size: 35px;
+          @media (min-width: 480px) {
+            @include avatar(50px);
+            margin: 19px;
+          }
+        }
+      }
+      .comment-container {
+        margin: 1px;
+        background-color: white;
+        @include shadow(3px,-0px,6px, 0.1);
+        //width: 708px;
+        display: flex;
+        justify-content: space-between;
+        .content {
+          .author {
+            b {
+              margin-left: 4px;
+              margin-right: 4px;
+            }
+            .date {
+              @extend .italic-font;
+              color: black;
+              font-size: 15px;
+              font-weight: normal;
+            }
+          }
+          padding: 20px;
+          //width: 500px;
+        }
+        .votes {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+  .peers-answered {
+    text-align: center;
+    @extend .italic-font;
+    height: 90px;
+    padding-top: 50px;
+    span {
+      @extend .normal-font;
+      font-size: 18px;
+      margin-right: 5px;
+      margin-top: -3px;
     }
   }
   .ending {

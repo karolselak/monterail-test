@@ -19,7 +19,6 @@ const mapStateToProps = state => {
   return { ...state };
 };
 const mapDispatchToProps = dispatch => {
-  debugger
   return bindActionCreators({ setQuestionList, setProfile, unsetProfile }, dispatch);
 };
 export default connect(mapStateToProps, mapDispatchToProps)(App);

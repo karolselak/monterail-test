@@ -1,0 +1,22 @@
+&.single {
+  height: 280px;
+  margin-top: -35px;
+  .question-header {
+    .unfollow {
+      @extend .normal-font;
+      color: $blue;
+      float: right;
+      margin-top: -25px;
+      margin-right: 25px;
+    }
+  }
+  .body {
+    display: flex;
+    justify-content: space-between;
+    .content {
+      @extend .small-font;
+      padding: 20px;
+      //width: 500px;
+    }
+  }
+}

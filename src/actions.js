@@ -30,6 +30,17 @@ const setQuestionList = (query, pages=1) => {
     })
   }
 }
+const setQuestion = (qid) => {
+  return (dispatch, getState) => {
+    var question = Mingo.aggregate(Questions,[{
+      $match: {'_id': qid}
+    }])[0];
+    dispatch({
+      type: 'SET_QUESTION',
+      question
+    })
+  }
+}
 const setProfile = (pid) => {
   return (dispatch, getState) => {
     var profile = Mingo.aggregate(Profiles,[{
@@ -50,4 +61,4 @@ const unsetProfile = () => {
     //dispatch(push('/'+generatePath(getState().pathParams))); //set new URL
   }*/
 }
-export { setQuestionList, setProfile, unsetProfile }
+export { setQuestionList, setProfile, unsetProfile, setQuestion }

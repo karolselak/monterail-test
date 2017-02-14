@@ -1,5 +1,4 @@
 import React from "react";
-import classNames from "classnames";
 import Header from './Header';
 
 export default class QuestionList extends React.Component { 
@@ -63,16 +62,14 @@ export default class QuestionList extends React.Component {
             <div className="small-circle"/>
           </div>
           {this.renderBody(q)}
-          
         </div>
       </div>
     });
   }  
   render() {
-  console.log(this.props.questionList.list)
     return (
       <div className="main-container">        
-        <Header {...this.props} />
+        <Header {...this.props} type='questions' />
         <div className="elem-container">
           {this.renderQuestions()}
           <div className="ending" key={'ending'}>

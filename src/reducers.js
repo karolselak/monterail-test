@@ -12,7 +12,12 @@ const questionListReducer = (state = {list:[], filter: 'myShelf', sortBy: 'recen
   }
 }
 const questionReducer = (state = {}, action) => {
-  return state;
+  switch (action.type) {
+    case 'SET_QUESTION':
+      return action.question || state;
+    default:
+      return state;
+  }
 }
 const profileReducer = (state = {}, action) => {
   switch (action.type) {
