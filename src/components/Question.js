@@ -7,6 +7,7 @@ export default class Question extends React.Component {
     return comment.subcomments.map((com, i) => {
       var date = Moment(com.date).fromNow();
       return <div key={'comm_'+i} className="comment sub">
+        <div className="indentation"/>
         <div className="avatar-container">
           <div className="avatar" style={{backgroundImage: `url(${com.author.avatar})`}}/>
         </div>
@@ -79,7 +80,6 @@ export default class Question extends React.Component {
                   <span>{q.author.name}</span>{q.connectedSource ? 'found on '+q.connectedSource : 'is asking'}:
                 </div>
                 <h2>{q.title}</h2>
-                <span className="unfollow">unfollow</span>
               </div>
               <div className="footer">
               </div>
@@ -87,6 +87,7 @@ export default class Question extends React.Component {
                 <div className="content">
                   {q.content}
                 </div>
+                <span className="unfollow">unfollow</span>
                 {this.renderVotes(q.score)}
               </div>
               <button>GIVE new answer</button>

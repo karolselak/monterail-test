@@ -1,22 +1,36 @@
 &.single {
-  height: 280px;
-  margin-top: -35px;
-  .question-header {
-    .unfollow {
-      @extend .normal-font;
-      color: $blue;
-      float: right;
-      margin-top: -25px;
-      margin-right: 25px;
-    }
+  //height: auto;
+  @media (min-width: 620px) {
+    //height: 280px;
   }
-  .body {
-    display: flex;
-    justify-content: space-between;
-    .content {
-      @extend .small-font;
-      padding: 20px;
-      //width: 500px;
+  margin-top: -35px;
+  .background {
+    height: auto;
+    .body {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      @media (min-width: 620px) {
+        flex-wrap: nowrap;
+      }
+      .unfollow {
+        @extend .normal-font;
+        color: $blue;
+        float: right;
+        width: 0px;
+        margin-top: 0px;
+        margin-left: 20px;
+        @media (min-width: 620px) {
+          margin-top: -52px;
+          margin-right: -35px;
+          margin-left: 35px;
+        }
+      }
+      .content {
+        @extend .small-font;
+        padding: 20px;
+        //width: 500px;
+      }
     }
   }
 }
