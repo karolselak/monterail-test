@@ -11,8 +11,8 @@ class App extends React.Component {
     return <div>
       {React.cloneElement(this.props.main, {...props})}
       {this.props.profile._id ? React.cloneElement(this.props.modal, {...props}) : null}
-      //TODO clean this for potential other modals
-      //TODO why profile donesn't render when 'forward' button clicked
+      {/*TODO clean this for potential other modals
+       //TODO why profile donesn't render when 'forward' button clicked*/}
     </div>;
   }
 }

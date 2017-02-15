@@ -25,7 +25,7 @@ const onEnterQuestion = store => {
 }
 
 const router = (store) => {
-  return <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
+  return <Router history={history}>
     <Route component={App}>
       <Route path="/" onEnter={onEnterMain(store)} components={{main: QuestionList, modal: Profile}} />
       <Route path="/main" onEnter={onEnterMain(store)} components={{main: QuestionList, modal: Profile}} />

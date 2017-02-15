@@ -63,6 +63,7 @@
         h2 {
           @extend .italic-font;
           color: $blue;
+          cursor: pointer;
           font-weight: bold;
           font-size: 17px;
           @media (min-width: 480px) {
@@ -160,6 +161,7 @@
         height: 10px;
         width: 10px;
         margin: 13px;
+        cursor: pointer;
       }
     }
   }
@@ -204,6 +206,7 @@
       font-size: 13px;
       @extend .bold-font;
       margin-right: 10px;
+      cursor: pointer;
     }
     padding-bottom: 3px;
   }
@@ -303,6 +306,7 @@
               margin-right: 4px;
             }
             .date {
+              cursor: auto;
               @extend .italic-font;
               color: black;
               font-size: 15px;

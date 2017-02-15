@@ -19,6 +19,7 @@ function encodeQueryData(data) {
 }
 
 const setQuestionList = (dispatch, query, pages=1, sortBy) => {
+  //TODO consider if 'pages' attribute in url is a good idea
   const questionsPerPage = 3;
   if (sortBy == 'recent') {
     var $sort = {date: -1};
@@ -43,7 +44,7 @@ const setQuestionList = (dispatch, query, pages=1, sortBy) => {
     list
   })
 }
-const setQuestion = (dispatch, qid) => {
+const setQuestion = (dispatch, qid, ifUrl) => {
   var question = Mingo.aggregate(Questions,[{
     $match: {'_id': qid}
   }])[0];
@@ -51,6 +52,9 @@ const setQuestion = (dispatch, qid) => {
     type: 'SET_QUESTION',
     question
   })
+  if (ifUrl) {
+    dispatch(push('/question?qid='+qid));
+  }
 }
 const setProfile = (dispatch, pid, ifUrl) => {
   var profile = Mingo.aggregate(Profiles,[{
@@ -67,6 +71,24 @@ const setProfile = (dispatch, pid, ifUrl) => {
     dispatch(push(path));
   }
 }
+const setQuery = (dispatch, query) => {
+  var urlData = decodeQueryData(window.location.search.slice(1))
+  urlData.query = query;
+  var path = window.location.pathname + '?' + encodeQueryData(urlData);
+  dispatch(push(path));
+  setQuestionList(dispatch, urlData.query, urlData.pages); //TODO do it cleaner, with 'sortBy' support
+}
+const showNextPage = (dispatch) => {
+  var urlData = decodeQueryData(window.location.search.slice(1))
+  if (urlData.pages) {
+    urlData.pages++;
+  } else {
+    urlData.pages = 2;
+  }
+  var path = window.location.pathname + '?' + encodeQueryData(urlData);
+  dispatch(push(path));
+  setQuestionList(dispatch, urlData.query, urlData.pages); //TODO do it cleaner, with 'sortBy' support
+}
 const unsetProfile = (dispatch) => {
   var urlData = decodeQueryData(window.location.search.slice(1))
   delete urlData.pid;
@@ -76,4 +98,4 @@ const unsetProfile = (dispatch) => {
   });
   dispatch(push(path));
 }
-export { setQuestionList, setProfile, unsetProfile, setQuestion }
+export { setQuestionList, setProfile, unsetProfile, setQuestion, showNextPage, setQuery }

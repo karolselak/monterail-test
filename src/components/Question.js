@@ -1,20 +1,31 @@
 import React from "react";
 import Header from './Header';
 import Moment from "moment";
+import { setProfile, setQuestion } from "../actions";
 
 export default class Question extends React.Component {
+  goToProfile(pid) {
+    setProfile(this.props.dispatch, pid, true);
+  }
+  goToQuestion(qid) {
+    setQuestion(this.props.dispatch, qid, true);
+  }
   renderSubcomments(comment) {
     return comment.subcomments.map((com, i) => {
       var date = Moment(com.date).fromNow();
       return <div key={'comm_'+i} className="comment sub">
         <div className="indentation"/>
         <div className="avatar-container">
-          <div className="avatar" style={{backgroundImage: `url(${com.author.avatar})`}}/>
+          <div className="avatar"
+            style={{backgroundImage: `url(${com.author.avatar})`}}
+            onClick={this.goToProfile.bind(this, com.author._id)} />
         </div>
         <div className="comment-container">
           <div className="content">
             <div className="author">
-              <span>{com.author.name}</span> commented it <b>&#183;</b> <span className="date">{date}</span>
+              <span onClick={this.goToProfile.bind(this, com.author._id)}>
+                {com.author.name}
+              </span> commented it <b>&#183;</b> <span className="date">{date}</span>
             </div>
             <p>
               {com.content}
@@ -31,12 +42,16 @@ export default class Question extends React.Component {
       return <div key={'comm_'+i} className="comment-body">
         <div className="comment">
           <div className="avatar-container">
-            <div className="avatar" style={{backgroundImage: `url(${com.author.avatar})`}}/>
+            <div className="avatar"
+              style={{backgroundImage: `url(${com.author.avatar})`}}
+              onClick={this.goToProfile.bind(this, com.author._id)} />
           </div>
           <div className="comment-container">
             <div className="content">
               <div className="author">
-                <span>{com.author.name}</span> commented it <b>&#183;</b> <span className="date">{date}</span>
+                <span onClick={this.goToProfile.bind(this, com.author._id)}>
+                  {com.author.name}
+                </span> commented it <b>&#183;</b> <span className="date">{date}</span>
               </div>
               <p>
                 {com.content}
@@ -74,12 +89,18 @@ export default class Question extends React.Component {
         <div className="elem-container">
           <div className="question single">
             <div className="background">
-              <div className="avatar" style={{backgroundImage: `url(${q.author.avatar})`}}/>
+              <div className="avatar"
+                style={{backgroundImage: `url(${q.author.avatar})`}}
+                onClick={this.goToProfile.bind(this, q.author._id)} />
               <div className="question-header">
                 <div className="author">
-                  <span>{q.author.name}</span>{q.connectedSource ? 'found on '+q.connectedSource : 'is asking'}:
+                  <span onClick={this.goToProfile.bind(this, q.author._id)}>
+                    {q.author.name}
+                  </span>{q.connectedSource ? 'found on '+q.connectedSource : 'is asking'}:
                 </div>
-                <h2>{q.title}</h2>
+                <h2 onClick={this.goToQuestion.bind(this, q._id)}>
+                  {q.title}
+                </h2>
               </div>
               <div className="footer">
               </div>

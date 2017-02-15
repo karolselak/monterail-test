@@ -57,6 +57,7 @@ $shadowSize: 0.7;
 @mixin avatar($size) {
   height: $size;
   width: $size;
+  cursor: pointer;
   background-size: $size;
   @include border-radius(50%);
 }

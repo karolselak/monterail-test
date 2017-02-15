@@ -6,6 +6,9 @@ export default class Profile extends React.Component {
   onHide() {
     unsetProfile(this.props.dispatch);
   }
+  goToProfile(pid) {
+    setProfile(this.props.dispatch, pid, true);
+  }
   componentDidMount() {
     this.$m = $(this.refs.modal);
     this.$m.modal('show');
@@ -22,8 +25,10 @@ export default class Profile extends React.Component {
   renderProfiles() {
     return this.props.profile.joinedTheSameTime.map((el)=>{
       return <div className="joined-profile" key={el._id} style={{backgroundImage: 'url(graphics/pattern.png)'}}>
-        <div className="joined-avatar" style={{backgroundImage: `url(${el.avatar})`}}/>
-        <div className="joined-name"><span>{el.name}</span></div>
+        <div className="joined-avatar"
+          style={{backgroundImage: `url(${el.avatar})`}}
+          onClick={this.goToProfile.bind(this, el._id)}/>
+        <div className="joined-name" onClick={this.goToProfile.bind(this, el._id)}><span>{el.name}</span></div>
       </div>
     })
   }
@@ -53,8 +58,12 @@ export default class Profile extends React.Component {
         <div className='modal-content '>
           <div className='modal-body'>
             <div className="profile-header">
-              <div className="avatar" style={{backgroundImage: `url(${this.props.profile.avatar})`}}/>
-              <div className="nickname">{this.props.profile.name}</div>
+              <div className="avatar"
+                style={{backgroundImage: `url(${this.props.profile.avatar})`}}
+                onClick={this.goToProfile.bind(this, this.props.profile._id)}/>
+              <div className="nickname" onClick={this.goToProfile.bind(this, this.props.profile._id)}>
+                {this.props.profile.name}
+              </div>
               <div className="basic-info">
                 <div>
                   <span className="text1">member for</span>
@@ -108,9 +117,10 @@ export default class Profile extends React.Component {
           </div>
           <div className="discussion" style={{backgroundImage: 'url(graphics/pattern.png)'}}>
             <div className="discussion-avatar"
-              style={{backgroundImage: `url(${disc.author.avatar})`}}/>
+              style={{backgroundImage: `url(${disc.author.avatar})`}}
+              onClick={this.goToProfile.bind(this, disc.author._id)}/>
             <div className="discussion-author">
-              <span>{disc.author.name}</span>
+              <span onClick={this.goToProfile.bind(this, disc.author._id)}>{disc.author.name}</span>
               {disc.connectedSource ? `found the ${disc.connectedSource} article` : 'asked'}
             </div>
             <h2>{disc.title}</h2>

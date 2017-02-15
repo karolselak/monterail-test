@@ -1,7 +1,11 @@
 import React from "react";
 import Moment from "moment";
+import { setQuery } from "../actions";
 
 export default class Header extends React.Component {
+  search() {
+    setQuery(this.props.dispatch, this.refs.search.value);
+  }
   renderSorting() {
     var recentClass = this.props.questionList.sortBy == 'recent' ? 'active' : 'passive';
     var hotClass = this.props.questionList.sortBy == 'hot' ? 'active' : 'passive';
@@ -54,14 +58,15 @@ export default class Header extends React.Component {
   }
   renderSearch() {
     return <div className="search">
-      <input placeholder="Search questions" defaultValue={this.props.location.query.query} />
-      <button>search</button>
+      <input placeholder="Search questions" ref='search' defaultValue={this.props.location.query.query} />
+      <button onClick={this.search.bind(this)}>search</button>
     </div>
   }
   render() {
     return (
       <div className="header">
-        <div className="back-icon" style={{backgroundImage: "url('graphics/back-icon.png')"}}/>
+        <a href='/main'><div className="back-icon"
+          style={{backgroundImage: "url('graphics/back-icon.png')"}}/></a>
         <div className="back-icon-small" style={{backgroundImage: "url('graphics/back-icon-small.png')"}}/>
         <div className="header-center">
           {this.renderMain()}
