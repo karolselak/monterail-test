@@ -1,16 +1,23 @@
 import React from "react";
 import Moment from "moment";
-import { setQuery } from "../actions";
+import { setQuery, setSorting } from "../actions";
 
 export default class Header extends React.Component {
   search() {
     setQuery(this.props.dispatch, this.refs.search.value);
   }
+  setSorting(sortBy) {
+    setSorting(this.props.dispatch, sortBy);
+  }
   renderSorting() {
     var recentClass = this.props.questionList.sortBy == 'recent' ? 'active' : 'passive';
     var hotClass = this.props.questionList.sortBy == 'hot' ? 'active' : 'passive';
     return <div className="sorting">
-      Sort by: <span className={recentClass}>recent</span> or <span className={hotClass}>hot</span>
+      Sort by: <span className={recentClass} onClick={this.setSorting.bind(this, 'recent')}>
+        recent
+      </span> or <span className={hotClass} onClick={this.setSorting.bind(this, 'hot')}>
+        hot
+      </span>
     </div>
   }
   renderLastDiscussed() {

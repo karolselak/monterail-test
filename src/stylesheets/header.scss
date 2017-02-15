@@ -166,8 +166,8 @@
           color: $gray;
           cursor: pointer;
           &:hover {
-            color: darken($gray, 20%);
-            border-bottom-color: darken($gray, 20%);
+            color: lighten($gray, 10%);
+            border-bottom-color: lighten($gray, 10%);
           }
           &:active {
             color: lighten($gray, 20%);

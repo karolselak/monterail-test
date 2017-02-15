@@ -7,6 +7,8 @@ const questionListReducer = (state = {list:[], filter: 'myShelf', sortBy: 'recen
   switch (action.type) {
     case 'SET_QUESTION_LIST':
       return update(state, {list: {$set: action.list}})
+    case 'SET_SORTING':
+      return update(state, {sortBy: {$set: action.sortBy}});
     default:
       return state;
   }

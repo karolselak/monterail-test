@@ -74,9 +74,10 @@ const setProfile = (dispatch, pid, ifUrl) => {
 const setQuery = (dispatch, query) => {
   var urlData = decodeQueryData(window.location.search.slice(1))
   urlData.query = query;
+  delete urlData.pages;
   var path = window.location.pathname + '?' + encodeQueryData(urlData);
   dispatch(push(path));
-  setQuestionList(dispatch, urlData.query, urlData.pages); //TODO do it cleaner, with 'sortBy' support
+  setQuestionList(dispatch, urlData.query); //TODO do it cleaner, with 'sortBy' support
 }
 const showNextPage = (dispatch) => {
   var urlData = decodeQueryData(window.location.search.slice(1))
@@ -98,4 +99,12 @@ const unsetProfile = (dispatch) => {
   });
   dispatch(push(path));
 }
-export { setQuestionList, setProfile, unsetProfile, setQuestion, showNextPage, setQuery }
+const setSorting = (dispatch, sortBy) => {
+  dispatch({
+    type: 'SET_SORTING',
+    sortBy
+  });
+  var urlData = decodeQueryData(window.location.search.slice(1))
+  setQuestionList(dispatch, urlData.query, urlData.pages, sortBy); //TODO do it cleaner
+}
+export { setQuestionList, setProfile, unsetProfile, setQuestion, showNextPage, setQuery, setSorting }
