@@ -1,10 +1,10 @@
 import React from "react";
 import Moment from "moment";
+import { unsetProfile, setProfile } from "../actions";
 
 export default class Profile extends React.Component {
   onHide() {
-    debugger
-    this.props.unsetProfile();
+    unsetProfile(this.props.dispatch);
   }
   componentDidMount() {
     this.$m = $(this.refs.modal);
@@ -28,9 +28,9 @@ export default class Profile extends React.Component {
     })
   }
   render() {
-    if (!this.props.location.query.pid) {
+    /*if (!this.props.location.query.pid || !this.props.profile._id) {
       return null;
-    }
+    }*/
     Moment.updateLocale('en', {
       relativeTime: {
         past: "%s",
