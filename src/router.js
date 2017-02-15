@@ -11,8 +11,8 @@ import { setQuestionList, setProfile } from "./actions";
 const onEnterMain = store => {
   return (args) => {
     var qs = args.location.query;
-    setQuestionList(qs.query, qs.pages, qs.pid)(store.dispatch, store.getState);
-    setProfile(qs.pid)(store.dispatch, store.getState);
+    setQuestionList(store.dispatch, qs.query, qs.pages, store.getState().questionList.sortBy);
+    setProfile(store.dispatch, qs.pid);
   }
 }
 

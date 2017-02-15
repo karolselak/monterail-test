@@ -18,6 +18,8 @@ const profileReducer = (state = {}, action) => {
   switch (action.type) {
     case 'SET_PROFILE':
       return action.profile || state;
+    case 'UNSET_PROFILE':
+      return {};
     default:
       return state;
   }
